@@ -1,11 +1,11 @@
 package com.example.sharedviewmodeldaggerespresso
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import com.example.sharedviewmodeldaggerespresso.ui.main.MainViewModel
-import com.example.sharedviewmodeldaggerespresso.ui.main.MainViewModelImpl
 import dagger.android.AndroidInjection
 import javax.inject.Inject
 
@@ -29,4 +29,9 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
+    companion object {
+        fun newIntent(context: Context): Intent {
+            return Intent(context, MainActivity::class.java)
+        }
+    }
 }
